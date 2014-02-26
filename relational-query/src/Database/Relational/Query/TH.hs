@@ -227,7 +227,7 @@ defineTableTypes derivationVar' tableVar' relVar' insVar' insQVar' recordType ta
   return $ iDs ++ dDs
 
 tableSQL :: String -> String -> String
-tableSQL schema table = map toUpper schema ++ '.' : map toLower table
+tableSQL schema table = schema ++ '.' : table
 
 derivationVarNameDefault :: String -> VarName
 derivationVarNameDefault =  (`varNameWithPrefix` "derivationFrom")
